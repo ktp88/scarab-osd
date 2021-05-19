@@ -4,7 +4,7 @@
 
 /********************       OSD HARDWARE settings      *********************/
 //Choose ONLY ONE option:
-//#define MINIMOSD                  // Uncomment this if using standard MINIMOSD hardware (default)
+#define MINIMOSD                  // Uncomment this if using standard MINIMOSD hardware (default)
 //#define MICROMINIMOSD             // Uncomment this if using the MICRO MINIMOSD hardware
 //#define AEROMAX                   // Uncomment this if using MWOSD AEROMAX hardware
 //#define RTFQV1                    // Uncomment this if using standard RTFQ/Witespy V1.1 OSD, select this to correct for both swapped bat1/bat 2 and to also use alternative resistors / pinouts.  
@@ -32,7 +32,7 @@
 // Choose ONLY ONE option from the following long list :-
 
 // latest release...
-//#define BETAFLIGHT                // Uncomment this if you are using latest BETAFLIGHT version 3.1 onwards
+#define BETAFLIGHT                // Uncomment this if you are using latest BETAFLIGHT version 3.1 onwards
 //#define CLEANFLIGHT               // Uncomment this if you are using latest CLEANFLIGHT version from repository (2.2.0 at time of this MWOSD release)
 //#define iNAV                      // Uncomment this if you are using latest iNAV version from repository (1.01 at time of this MWOSD release)
 //#define iNAV_KK                   // Uncomment this if you are using AEROMAX OSD and BARO sensor addition with iNAV with KK audio vario
@@ -68,7 +68,7 @@
 
 /********************       AIRCRAFT/INSTALLATION TYPE settings      *********************/
 //Choose ONLY ONE option:
-//#define ROTORCRAFT                // Default for multirotors etc.
+#define ROTORCRAFT                // Default for multirotors etc.
 //#define FIXEDWING                 // Uncomment this if you are using fixed wing with MultiWii or Baseflight 
 
 
@@ -98,12 +98,12 @@
 // Disable features if you require memory for other features
 // Further configuration may be require elsewhere in config.h + option enabled on GUI
 #define HORIZON                     // Enable/disable HORIZON indicator
-#define MAPMODE                     // Enable/disable MAP MODE - map indication of relative positions of home and aircraft
-//#define SBDIRECTION               // Enable/disable sidebar indicators (icons indicationg changes in speed or altitude)
+//#define MAPMODE                     // Enable/disable MAP MODE - map indication of relative positions of home and aircraft
+#define SBDIRECTION               // Enable/disable sidebar indicators (icons indicationg changes in speed or altitude)
 //#define GPSTIME                   // Enable/disable GPS Time functions
 //#define SPORT                     // Enable/disable FRSKY S.PORT cell code
 
-//#define CANVAS_SUPPORT            // Enable CANVAS mode support for post betaflight 3.1.0 CMS
+#define CANVAS_SUPPORT            // Enable CANVAS mode support for post betaflight 3.1.0 CMS
 //#define INVERTED_CHAR_SUPPORT     // Enable inverted char support
 
 
@@ -138,7 +138,7 @@
 
 /********************       ALARM/STATUS settings      *********************/
 #define ALARM_VOLTAGE               // Text alerts if voltage below voltage alarm - in addition to flashing voltage indicator
-#define ALARM_SATS                  // Text alerts if sats below MINSATFIX - in addition to flashing sat indicator
+//#define ALARM_SATS                  // Text alerts if sats below MINSATFIX - in addition to flashing sat indicator
 //#define ALARM_GPS 5               // Text alerts if no GPS data for more than x secs. Sets GPS sats to zero
 #define ALARM_MSP 5                 // Text alerts if no Flight controller data for more than x secs. 
 
@@ -155,7 +155,7 @@
 
 /******************** Serial speed settings *********************/
 // Overides defaults if required (57.6k for MAVLINK based or 115k for all others). 
-//#define BAUDRATE 115200
+#define BAUDRATE 115200
 //#define BAUDRATE 57600
 //#define BAUDRATE 38400
 //#define BAUDRATE 19200
@@ -186,7 +186,7 @@
 #define MSP_SPEED_MED               // Default
 //#define MSP_SPEED_HIGH            // Enable for faster AHI and speed updates. Requires higher baud rates and increases overhead on the FC to process
 #define MSP_USE_BARO                // Disable if not used to increase serial speed update for MSP based FC: Baro IC data such as  altitude
-#define MSP_USE_GPS                 // Disable if not used to increase serial speed update for MSP based FC: GPS data such as speed , distance
+//#define MSP_USE_GPS                 // Disable if not used to increase serial speed update for MSP based FC: GPS data such as speed , distance
 #define MSP_USE_ANALOG              // Disable if not used to increase serial speed update for MSP based FC: Voltage, Amperage or RSSI from the FC
 
 
@@ -201,8 +201,8 @@
 #define INTRO_MENU                  // Enable to display TX stick MENU 
 #define INTRO_CALLSIGN              // Enable to display callsign at startup
 #define INTRO_SIGNALTYPE            // Enable to display video type at startup
-//#define INTRO_FC                  // Enable to display FC version at startup
-#define INTRO_DELAY 6               // Seconds intro screen should show for. Default is 5 
+#define INTRO_FC                  // Enable to display FC version at startup
+#define INTRO_DELAY 3               // Seconds intro screen should show for. Default is 5 
 //#define STARTUPDELAY 500          // Enable alternative startup delay (in ms) to allow MAX chip voltage to rise fully and initialise before configuring. Deafult = 1000 
 
 
@@ -231,7 +231,7 @@
 //#define WHITEBRIGHTNESS 0x01      // Optional change from default 0x00=120%,0x01=100%,0x10=90%,0x11=80%  default is 0x01=100%
 //#define BLACKBRIGHTNESS 0x00      // Optional change from default 0x00=0%,0x01=10%,0x10=20%0x11=30%  default is 0x00=0%
 //#define I2CERROR 3                // Autodisplay Mutltiwii I2C errors if exceeds specified count 
-//#define NOTHROTTLESPACE           // Enable to remove space between throttle symbol and the data
+#define NOTHROTTLESPACE           // Enable to remove space between throttle symbol and the data
 #define DISPLAY_PR                  // Display pitch / roll angles. Requires relevant layout ppositions to be enabled
 //#define REVERSE_AHI_PITCH         // Reverse pitch / roll direction of AHI - for DJI / Eastern bloc OSD users
 //#define REVERSE_AHI_ROLL          // Reverse pitch / roll direction of AHI - for DJI / Eastern bloc OSD users
@@ -251,17 +251,17 @@
 //#define LONG_RANGE_DISPLAY        // Enable this to for long range display consolidation - displays distance in KM or feet when exceed 9999m or ft. Auto enabled for FIXEDWING
 #define AIRMODE                     // Enable this to display airmode icon. 
 //#define CROPGPSPOSITION           // Crop GPS coordinate display to decimals only ".DDDDDDD"
-#define MASKGPSLOCATION             // Disable to save memeory if not used. Enables MASK GPS settings on GUI. Coordinates displayed with major digits XXX set to random location "XXX.DDDDDDD" 
-//#define TEXTMODE                  // Enable to display the flyingmode as text instead of symbols
-//#define OSD_SWITCH                // Forces original 2 way multiwii screen switch using OSD Switch via Flight Controller. MUST Ensure enabled on flight controller - e.g. #define OSD_SWITCH on multiwii
+//#define MASKGPSLOCATION             // Disable to save memeory if not used. Enables MASK GPS settings on GUI. Coordinates displayed with major digits XXX set to random location "XXX.DDDDDDD" 
+#define TEXTMODE                  // Enable to display the flyingmode as text instead of symbols
+#define OSD_SWITCH                // Forces original 2 way multiwii screen switch using OSD Switch via Flight Controller. MUST Ensure enabled on flight controller - e.g. #define OSD_SWITCH on multiwii
 //#define NOSUMMARYTHROTTLERESET    // Enable to supress summary display clearing from throttle
-#define OSDSUMMARY 30               // Seconds summary is displayed for after landing. Max 254
+#define OSDSUMMARY 10               // Seconds summary is displayed for after landing. Max 254
 
 
 /********************       Power / efficiency display Settings         ************************/
-#define DISPLAYWATTS                // Disable to save memeory if not used. Enable this to display Watts
-#define DISPLAYEFFICIENCY           // Disable to save memeory if not used. Enable this to display Watts/KMh or Mph for efficiency
-#define DISPLAYMAHMIN               // Disable to save memeory if not used. Enable this to display average mAh/minKMh
+//#define DISPLAYWATTS                // Disable to save memeory if not used. Enable this to display Watts
+//#define DISPLAYEFFICIENCY           // Disable to save memeory if not used. Enable this to display Watts/KMh or Mph for efficiency
+//#define DISPLAYMAHMIN               // Disable to save memeory if not used. Enable this to display average mAh/minKMh
 
 
 /********************       Visual Vario / climbrate Settings         ************************/
@@ -322,7 +322,7 @@
 
 /********************       Voltage Warning Settings         ************************/
 //The following variables are available for adjustment of battery icon only 
-#define CELL_VOLTS_MIN 32           // Specify the cell voltage at which it is considered empty. Used for battery guage icon only
+#define CELL_VOLTS_MIN 34           // Specify the cell voltage at which it is considered empty. Used for battery guage icon only
 #define CELL_VOLTS_MAX 42           // Specify the max normal LIPO cell voltage. Used for auto cell count determination and battery guage icon
 //#define FC_VOLTAGE_CONFIG         // Additionally uncomment this if you want to use the vbat voltage config with BASEFLIGHT, CLEANFLIGHT and BETAFLIGHT on the flight controller (include: min cell voltage, max cell voltage and warning cell voltage)
 
@@ -356,10 +356,10 @@
 
 /********************  RECORD CAPTURE  settings      *********************/
 // This is used for those who are attempting records to always show the maximum achieved.
-#define SHOW_MAX_SPEED              // Enable to display MAX speed achieved
-#define SHOW_MAX_DISTANCE           // Enable to display MAX distance achieved
-#define SHOW_TOTAL_DISTANCE         // Enable to display TOTAL distance achieved
-//#define SHOW_MAX_ALTITUDE         // Enable to display MAX altitude achieved on line below current altitude
+//#define SHOW_MAX_SPEED              // Enable to display MAX speed achieved
+//#define SHOW_MAX_DISTANCE           // Enable to display MAX distance achieved
+//#define SHOW_TOTAL_DISTANCE         // Enable to display TOTAL distance achieved
+#define SHOW_MAX_ALTITUDE         // Enable to display MAX altitude achieved on line below current altitude
 
 
 /********************  THROTTLE calibration  settings      *********************/
@@ -381,7 +381,7 @@
 // Regional RF frequency regulations: Choose ONLY ONE option:
 #define VTX_REGION_UNRESTRICTED     // Enable for all 40 channels
 //#define VTX_REGION_AUSTRALIA      // Enable for AU legal channels and power level only
-#define DISPLAY_VTX_INFO            // Enable to show frequency in menu display. 
+//#define DISPLAY_VTX_INFO            // Enable to show frequency in menu display. 
 
 
 /********************           Display items lead icon           *********************/
